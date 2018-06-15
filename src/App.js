@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+
 import Title from "./components/Title";
 import Header from "./components/Header";
 import Main from "./components/Main";
+
 import "./App.css";
 
 class App extends Component {
@@ -10,23 +12,18 @@ class App extends Component {
     this.state = {
       incomeData: [],
       expenseData: [],
-      totalIncome: 0,
-      totalExpense: 0
+      incomeTotal: 0,
+      expenseTotal: 0
     };
   }
+
   addData = (data, type) => {
-    if (type === "income") {
-      this.setState({
-        incomeData: [...this.state.incomeData, data],
-        totalIncome: this.state.totalIncome + parseInt(data.amount)
-      });
-    } else {
-      this.setState({
-        expenseData: [...this.state.expenseData, data],
-        totalExpense: this.state.totalExpense + parseInt(data.amount)
-      });
-    }
+    this.setState({
+      [`${type}Data`]: [...this.state[`${type}Data`], data],
+      [`${type}Total`]: this.state[`${type}Total`] + parseInt(data.amount, 10)
+    });
   };
+
   render() {
     return (
       <div className="wrapper">
