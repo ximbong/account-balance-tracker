@@ -9,23 +9,27 @@ class Header extends Component {
       type: "income"
     };
   }
+
   handleAmount = event => {
     this.setState({
       amount: event.target.value
     });
     event.target.value = "";
   };
+
   handleDescription = event => {
     this.setState({
       description: event.target.value
     });
     event.target.value = "";
   };
+
   handleType = event => {
     this.setState({
       type: event.target.value
     });
   };
+
   getDate = () => {
     const date = new Date();
     let dd = date.getDate();
@@ -42,9 +46,9 @@ class Header extends Component {
 
     return dd + "/" + mm + "/" + yyyy;
   };
+
   getTime = () => {
     const date = new Date();
-
     let hr = date.getHours();
     let min = date.getMinutes();
     let sec = date.getSeconds();
@@ -61,6 +65,7 @@ class Header extends Component {
 
     return hr + ":" + min + ":" + sec;
   };
+
   handleClick = () => {
     const { description, amount, type } = this.state;
     const displayData = {

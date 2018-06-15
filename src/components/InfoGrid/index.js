@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+
 import InfoRow from "../InfoRow";
 
 class InfoGrid extends PureComponent {
@@ -13,6 +14,7 @@ class InfoGrid extends PureComponent {
         key={i}
       />
     ));
+
     return (
       <div className="info-box" id={name}>
         <div className="income-type">{name}</div>
