@@ -4,6 +4,7 @@ import InfoRow from "../InfoRow";
 
 const Main = props => {
   const { incomeData, expenseData, totalIncome, totalExpense } = props.data;
+  const finalAmount = totalIncome - totalExpense;
   return (
     <div className="main">
       <div className="main-grid">
@@ -18,7 +19,7 @@ const Main = props => {
           <InfoRow description="Total Expense" amount={totalExpense} />
         </div>
         <div className="final">
-          <span>Total: {totalIncome - totalExpense} $</span>
+          <span>Total: {finalAmount} $</span>
         </div>
       </div>
     </div>
