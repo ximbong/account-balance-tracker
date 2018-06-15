@@ -27,26 +27,31 @@ class Header extends Component {
     });
   };
   handleClick = () => {
-    console.log(this.state);
-    this.props.addData(this.state);
+    const { description, amount, type } = this.state;
+    const displayData = {
+      description: description,
+      amount: amount
+    };
+    this.props.addData(displayData, type);
   };
   render() {
+    const { description, amount, type } = this.state;
     return (
       <div className="header">
         <input
           type="text"
           placeholder="Description"
-          value={this.state.description}
+          value={description}
           onChange={this.handleDescription}
         />
         <input
           type="number"
           placeholder="Amount"
-          value={this.state.amount}
+          value={amount}
           onChange={this.handleAmount}
         />
         <div className="option">
-          <select value={this.state.type} onChange={this.handleType}>
+          <select value={type} onChange={this.handleType}>
             <option value="income">Income</option>
             <option value="expense">Expense</option>
           </select>
