@@ -1,28 +1,123 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+body {
+  width: 100vw;
+  height: 100vh;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #527593;
+  background: -moz-linear-gradient(left, #527593 0%, #5e3986 100%);
+  background: -webkit-linear-gradient(left, #527593 0%, #5e3986 100%);
+  background: linear-gradient(to right, #527593 0%, #5e3986 100%);
+}
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+.title {
+  font-size: 250%;
+  text-align: center;
+  margin-bottom: 50px;
   color: white;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 0.5);
+  flex: 0 1 auto;
 }
 
-.App-title {
-  font-size: 1.5em;
+.container {
+  width: 800px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.App-intro {
-  font-size: large;
+input {
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 40px;
+}
+
+.header input,
+.header > .option > * {
+  border-radius: 3px;
+}
+
+.option {
+  display: flex;
+}
+
+.option > * {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.option > select {
+  margin-right: 10px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #ededed;
+  color: white;
+  flex: 1 1 auto;
+}
+
+.main-grid {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.income-type {
+  text-align: center;
+  padding: 5px;
+  font-family: sans-serif;
+  font-weight: 600;
+  background: #55608e;
+  border: 1px solid #ededed;
+}
+
+.info-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-list {
+  flex: 1 1 auto;
+  border: 1px solid #ededed;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+}
+
+.item > * {
+  padding: 8px;
+}
+
+.total-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.total-grid > * {
+  border: 1px solid #ededed;
+}
+
+.final {
+  grid-column: 1/-1;
+  padding: 10px;
+  text-align: center;
 }
