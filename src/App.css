@@ -1,4 +1,4 @@
-body {
+.wrapper {
   width: 100vw;
   height: 100vh;
   padding: 20px;
@@ -96,6 +96,7 @@ input {
 .item-list {
   flex: 1 1 auto;
   border: 1px solid #ededed;
+  overflow-y: auto;
 }
 
 .item {
