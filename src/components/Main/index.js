@@ -1,10 +1,12 @@
 import React from "react";
+
 import InfoGrid from "../InfoGrid";
 import InfoRow from "../InfoRow";
 
 const Main = props => {
-  const { incomeData, expenseData, totalIncome, totalExpense } = props.data;
-  const finalAmount = totalIncome - totalExpense;
+  const { incomeData, expenseData, incomeTotal, expenseTotal } = props.data;
+  const finalAmount = incomeTotal - expenseTotal;
+
   return (
     <div className="main">
       <div className="main-grid">
@@ -13,10 +15,10 @@ const Main = props => {
       </div>
       <div className="total-grid">
         <div className="total-box">
-          <InfoRow description="Total Income" amount={totalIncome} />
+          <InfoRow description="Total Income" amount={incomeTotal} />
         </div>
         <div className="total-box">
-          <InfoRow description="Total Expense" amount={totalExpense} />
+          <InfoRow description="Total Expense" amount={expenseTotal} />
         </div>
         <div className="final">
           <span>Total: {finalAmount} $</span>
