@@ -4,8 +4,11 @@
   "private": true,
   "homepage": "http://ximbong91023.github.io/account-balance-tracker",
   "dependencies": {
+    "font-awesome": "^4.7.0",
+    "plotly.js": "^1.38.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-plotly.js": "^2.2.0",
     "react-scripts": "1.1.4"
   },
   "scripts": {
