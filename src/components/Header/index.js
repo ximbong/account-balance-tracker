@@ -39,7 +39,6 @@ class Header extends Component {
     if (dd < 10) {
       dd = "0" + dd;
     }
-
     if (mm < 10) {
       mm = "0" + mm;
     }
@@ -68,13 +67,28 @@ class Header extends Component {
 
   handleClick = () => {
     const { description, amount, type } = this.state;
-    const displayData = {
-      description: description,
-      amount: amount,
-      date: this.getDate(),
-      time: this.getTime()
-    };
-    this.props.addData(displayData, type);
+
+    if (amount > 0) {
+      const displayData = {
+        description: description,
+        amount: amount,
+        date: this.getDate(),
+        time: this.getTime()
+      };
+
+      this.setState({
+        description: "",
+        amount: ""
+      });
+
+      this.props.addData(displayData, type);
+    } else {
+      this.setState({
+        amount: ""
+      });
+
+      alert("Please enter positive value!");
+    }
   };
 
   render() {
