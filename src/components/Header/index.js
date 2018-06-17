@@ -65,9 +65,10 @@ class Header extends Component {
     return hr + ":" + min + ":" + sec;
   };
 
-  handleClick = () => {
+  handleSubmit = e => {
     const { description, amount, type } = this.state;
 
+    e.preventDefault();
     if (amount > 0) {
       const displayData = {
         description: description,
@@ -94,7 +95,7 @@ class Header extends Component {
   render() {
     const { description, amount, type } = this.state;
     return (
-      <div className="header">
+      <form className="header" onSubmit={this.handleSubmit}>
         <input
           type="text"
           placeholder="Description"
@@ -112,9 +113,9 @@ class Header extends Component {
             <option value="income">Income</option>
             <option value="expense">Expense</option>
           </select>
-          <button onClick={this.handleClick}>Add</button>
+          <button>Add</button>
         </div>
-      </div>
+      </form>
     );
   }
 }
