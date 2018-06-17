@@ -3,6 +3,11 @@ import React, { PureComponent } from "react";
 import InfoRow from "../InfoRow";
 
 class InfoGrid extends PureComponent {
+  showGraph = event => {
+    const graphType = event.target.id;
+    this.props.showGraph(graphType);
+  };
+
   render() {
     const { data, name } = this.props;
     const InfoList = data.map((e, i) => (
@@ -16,8 +21,10 @@ class InfoGrid extends PureComponent {
     ));
 
     return (
-      <div className="info-box" id={name}>
-        <div className="income-type">{name}</div>
+      <div className="info-box">
+        <div className="income-type" onClick={this.showGraph} id={name}>
+          {name}
+        </div>
         <div className="item-list">{InfoList}</div>
       </div>
     );
