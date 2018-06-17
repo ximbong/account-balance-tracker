@@ -10,9 +10,7 @@ class InfoRow extends PureComponent {
           <span className="number">{amount}</span>
           <span className="currency">$</span>
         </div>
-        <div className="time">
-          {time} {date}
-        </div>
+        <div className="time">{time && `${time} - ${date}`}</div>
       </div>
     );
   }
