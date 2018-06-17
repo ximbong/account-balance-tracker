@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Title from "./components/Title";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Stats from "./components/Stats";
 import Graph from "./components/Graph";
 
 import "./App.css";
@@ -41,7 +41,7 @@ class App extends Component {
         <div className="container">
           <Header addData={this.addData} />
           {!graphType ? (
-            <Main data={this.state} showGraph={this.showGraph} />
+            <Stats data={this.state} showGraph={this.showGraph} />
           ) : (
             <Graph
               graphType={graphType}
