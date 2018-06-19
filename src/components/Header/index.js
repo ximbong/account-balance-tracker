@@ -14,14 +14,12 @@ class Header extends Component {
     this.setState({
       amount: event.target.value
     });
-    event.target.value = "";
   };
 
   handleDescription = event => {
     this.setState({
       description: event.target.value
     });
-    event.target.value = "";
   };
 
   handleType = event => {
